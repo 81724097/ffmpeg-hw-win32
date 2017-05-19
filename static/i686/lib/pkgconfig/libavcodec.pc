@@ -1,0 +1,14 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 57.89.100
+Requires: libswresample >= 2.7.100, libavutil >= 55.58.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavcodec -lws2_32 -lavicap32 -lgdi32 -lpsapi -lole32 -lstrmiids -luuid -loleaut32 -lshlwapi -luser32 -liconv -lsecur32 -LD:/SDK/msys64/mingw32/lib -lmingw32 -lSDL2main -lSDL2 -lmingw32 -lSDL2main -lSDL2 -Wl,--no-undefined -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid -static-libgcc -mconsole -LD:/SDK/msys64/mingw32/lib -lx265 -LD:/SDK/msys64/mingw32/lib -lx264 -LD:/SDK/msys64/mingw32/lib -lvpx -lm -LD:/SDK/msys64/mingw32/lib -lvpx -lm -LD:/SDK/msys64/mingw32/lib -lvpx -lm -LD:/SDK/msys64/mingw32/lib -lvpx -lm -LD:/SDK/msys64/mingw32/lib -lspeex -lm -lmp3lame -LD:/SDK/msys64/mingw32/lib -lmfx -lstdc++ -LD:/SDK/msys64/mingw32/lib -lfdk-aac -lm -lbz2 -lz -lpsapi -ladvapi32 -lshell32
+Libs.private: 
+Cflags: -I${includedir}
