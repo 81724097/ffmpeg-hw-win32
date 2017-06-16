@@ -1,19 +1,47 @@
 # ffmpeg-hw-win32
-ffmpeg 3.0  
-gcc 5.3.0  
---enable-nvenc              nvidia_video_sdk_6.0.1  
---enable-libmfx             Intel(R)_Media_SDK_2016.0.1   
+ffmpeg 3.3.1  
+gcc 6.3.0  
+--enable-nvenc              
+--enable-libmfx             
 --enable-libfdk-aac         0.1.4  
---enable-libspeex           1.2rc1  
---enable-libx264            1:148.20150725  
---enable-libopenh264        1.5.0  
---enable-libx265            1.8  
---enable-libopus            1.1.2  
+--enable-libspeex           1.2  
+--enable-libx264            git:r2721.72d53ab  
+--enable-libx265            2.3  
 --enable-libmp3lame         3.99.5  
---enable-libkvazaar         0.8.2
- ```
- ./configure --prefix=/home/aliang/FFmpeg/x86_64 --enable-small --disable-debug --disable-doc --arch=x86_64 --cc='ccache x86_64-w64-mingw32-gcc' --cross-prefix=x86_64-w64-mingw32- --enable-cross-compile --target-os=mingw32 --enable-libfdk-aac --enable-libmp3lame --enable-libopus --enable-libspeex --enable-libx264 --enable-libx265 --enable-libmfx --enable-nvenc --enable-libopenh264 --enable-libkvazaar --enable-gpl --enable-nonfree
-```
-![img]
 
-[img]:https://raw.githubusercontent.com/illuspas/ffmpeg-hw-win32/master/h264-encoders.png
+## Hardware acceleration methods:
+```
+dxva2
+qsv
+cuvid
+```
+
+## HW decoders:
+```
+ V..... h264_cuvid            (codec h264)
+ V..... hevc_cuvid            (codec hevc)
+ V..... mjpeg_cuvid           (codec mjpeg)
+ V..... mpeg1_cuvid           (codec mpeg1video)
+ V..... mpeg2_cuvid           (codec mpeg2video)
+ V..... mpeg4_cuvid           (codec mpeg4)
+ V..... vc1_cuvid             (codec vc1)
+ V..... vp8_cuvid             (codec vp8)
+ V..... vp9_cuvid             (codec vp9)
+ V....D h264_qsv              (codec h264)
+ V....D hevc_qsv              (codec hevc)
+ V....D mpeg2_qsv             (codec mpeg2video)
+ V....D vc1_qsv               (codec vc1)
+ V....D vp8_qsv               (codec vp8)
+```
+
+## HW encoders:
+```
+ V..... h264_nvenc            (codec h264)
+ V..... nvenc                 (codec h264)
+ V..... nvenc_h264            (codec h264)
+ V..... nvenc_hevc            (codec hevc)
+ V..... hevc_nvenc            (codec hevc)
+ V..... h264_qsv              (codec h264)
+ V..... hevc_qsv              (codec hevc)
+ V..... mpeg2_qsv             (codec mpeg2video)
+```
