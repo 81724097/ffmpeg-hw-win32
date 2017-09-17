@@ -53,6 +53,12 @@ cuvid
  ... scale_qsv         V->V       (null)
 ```
 
+## Full Hardware Acceleration Transcode with NVDIA GPU
+```
+ffmpeg.exe -hwaccel cuvid -c:v h264_cuvid -i <input.mp4> -vf scale_npp=1280:720 -c:v h264_nvenc <output.mp4>
+```
+> scale_npp only works under x86_64
+
 ## H.265 over RTMP
 ffmpeg -re -i INPUT -c:v libx265 -tune zerolatency -c:a copy -f flv rtmp://server/live/stream  
 Media Server support required. Try this: https://github.com/illuspas/nginx-rtmp-win32/tree/nms  
