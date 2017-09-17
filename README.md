@@ -1,14 +1,15 @@
 # ffmpeg-hw-win32
-ffmpeg 3.3.2  
-gcc 6.3.0  
+ffmpeg 3.3.4  
+gcc 7.2.0  
 --enable-nvenc              
 --enable-libmfx             
 --enable-libfdk-aac         0.1.4  
 --enable-libspeex           1.2  
 --enable-libx264            git:r2721.72d53ab  
---enable-libx265            2.4  
+--enable-libx265            2.5  
 --enable-libmp3lame         3.99.5  
---enable-libvpx             1.6.1
+--enable-libvpx             1.6.1  
+--enable-libnpp
 
 ## Hardware acceleration methods:
 ```
@@ -45,6 +46,11 @@ cuvid
  V..... h264_qsv              (codec h264)
  V..... hevc_qsv              (codec hevc)
  V..... mpeg2_qsv             (codec mpeg2video)
+```
+## HW scale filters:
+```
+ ... scale_npp         V->V       (null)
+ ... scale_qsv         V->V       (null)
 ```
 
 ## H.265 over RTMP
