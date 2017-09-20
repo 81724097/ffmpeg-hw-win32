@@ -57,7 +57,7 @@ cuvid
 ```
 ffmpeg.exe -hwaccel cuvid -c:v h264_cuvid -i <input.mp4> -vf scale_npp=1280:720 -c:v h264_nvenc <output.mp4>
 ```
-> scale_npp only works under x86_64
+> scale_npp only works under x86_64，need to install CUDA_8.0.61, or unzip the npp_dll.zip.
 
 ## H.265 over RTMP
 ffmpeg -re -i INPUT -c:v libx265 -tune zerolatency -c:a copy -f flv rtmp://server/live/stream  
