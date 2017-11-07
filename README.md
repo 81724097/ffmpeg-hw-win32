@@ -61,6 +61,6 @@ ffmpeg.exe -hwaccel cuvid -c:v h264_cuvid -i <input.mp4> -vf scale_npp=1280:720 
 
 ## H.265 over RTMP
 ffmpeg -re -i INPUT -c:v libx265 -tune zerolatency -c:a copy -f flv rtmp://server/live/stream  
-Media Server support required. Try this: https://github.com/illuspas/nginx-rtmp-win32/tree/nms  
+Media Server support required. Try this: https://github.com/illuspas/Node-Media-Server  
 Client support required. Try this:https://github.com/NodeMedia/NodeMediaClient-Android  
 and this:https://github.com/NodeMedia/NodeMediaClient-iOS
