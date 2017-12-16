@@ -88,7 +88,10 @@ x265 [info]: tools: deblock sao
 > libx265 10bit only works under x86_64, need unzip the libx265_main10.zip
 
 ## H.265 over RTMP
+```
 ffmpeg -re -i INPUT -c:v libx265 -tune zerolatency -c:a copy -f flv rtmp://server/live/stream  
+```
+
 Media Server support required. Try this: https://github.com/illuspas/Node-Media-Server  
 Client support required. Try this:https://github.com/NodeMedia/NodeMediaClient-Android  
 and this:https://github.com/NodeMedia/NodeMediaClient-iOS
